@@ -9,7 +9,7 @@ interface Todo {
 }
 
 export const TodoInfo = ({ todo }: { todo: Todo }) => {
-  const user = usersFromServer.find((user) => user.id === todo.userId);
+  const userInfo = usersFromServer.find((user) => user.id === todo.userId);
 
   return (
     <article
@@ -17,7 +17,9 @@ export const TodoInfo = ({ todo }: { todo: Todo }) => {
       className={`TodoInfo ${todo.completed ? 'TodoInfo--completed' : ''}`}
     >
       <h2 className="TodoInfo__title">{todo.title}</h2>
-      <UserInfo user={user ? { email: user.email, name: user.name } : null} />
+      <UserInfo
+        user={userInfo ? { email: userInfo.email, name: userInfo.name } : null}
+      />
     </article>
   );
 };

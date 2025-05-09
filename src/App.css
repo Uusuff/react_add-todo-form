@@ -16,7 +16,6 @@ button {
 }
 
 .TodoInfo {
-  width: -moz-max-content;
   width: max-content;
   padding: 8px;
   margin: 12px 0;
@@ -24,15 +23,17 @@ button {
   border-radius: 8px;
   background-color: antiquewhite;
 }
+
 .TodoInfo__title {
   margin: 4px 0;
   font-size: inherit;
   color: #f00;
 }
+
 .TodoInfo--completed .TodoInfo__title {
   color: #080;
 }
 
 .UserInfo {
   font-style: italic;
-}/*# sourceMappingURL=App.css.map */
+}

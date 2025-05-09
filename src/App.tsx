@@ -18,6 +18,7 @@ export const App = () => {
     if (title.trim() === '') {
       setTitleError(true);
     }
+
     if (selectedUserId === 0) {
       setUserError(true);
     }
