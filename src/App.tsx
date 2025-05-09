@@ -51,7 +51,7 @@ export const App = () => {
     <div className="App">
       <h1>Add todo form</h1>
 
-      <form action="/api/todos" method="POST">
+      <form action="/api/todos" method="POST" onSubmit={handleAddTodo}>
         <div className="field">
           <input
             type="text"
@@ -88,7 +88,7 @@ export const App = () => {
           {userError && <span className="error">Please choose a user</span>}
         </div>
 
-        <button type="submit" data-cy="submitButton" onClick={handleAddTodo}>
+        <button type="submit" data-cy="submitButton">
           Add
         </button>
       </form>
