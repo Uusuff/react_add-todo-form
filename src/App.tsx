@@ -61,7 +61,6 @@ export const App = () => {
               setTitle(e.target.value);
               setTitleError(false);
             }}
-            required
             placeholder="Enter todo title"
           />
           {titleError && <span className="error">Please enter a title</span>}

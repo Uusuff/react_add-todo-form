@@ -1,14 +1,12 @@
 import { UserInfo } from '../UserInfo';
 import usersFromServer from '../../api/users';
+import { Todo } from '../../types/Todo';
 
-interface Todo {
-  id: number;
-  title: string;
-  userId: number;
-  completed: boolean;
+interface Props {
+  todo: Todo;
 }
 
-export const TodoInfo = ({ todo }: { todo: Todo }) => {
+export const TodoInfo = ({ todo }: Props) => {
   const userInfo = usersFromServer.find(user => user.id === todo.userId);
 
   return (
@@ -17,9 +15,9 @@ export const TodoInfo = ({ todo }: { todo: Todo }) => {
       className={`TodoInfo ${todo.completed ? 'TodoInfo--completed' : ''}`}
     >
       <h2 className="TodoInfo__title">{todo.title}</h2>
-      <UserInfo
-        user={userInfo ? { email: userInfo.email, name: userInfo.name } : null}
-      />
+      {userInfo && <UserInfo
+        user={userInfo}
+      />}
     </article>
   );
 };

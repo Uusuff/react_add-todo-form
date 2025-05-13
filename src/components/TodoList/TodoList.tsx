@@ -1,12 +1,8 @@
+import { Todo } from '../../types/Todo';
 import { TodoInfo } from '../TodoInfo';
 
 interface Props {
-  todos: Array<{
-    id: number;
-    title: string;
-    userId: number;
-    completed: boolean;
-  }>;
+  todos: Todo[];
 }
 
 export const TodoList: React.FC<Props> = ({ todos }) => {
